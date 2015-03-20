@@ -3,7 +3,7 @@ var width = 1400,
 
 var color = d3.scale.category20();
 
-var force = d3.layout.force() 
+var force = d3.layout.force()
     .charge(-30)
     .linkDistance(25)
     .size([width, height]);
@@ -11,9 +11,9 @@ var force = d3.layout.force()
 var svg = d3.select("body").append("svg")
     .attr("width", width)
     .attr("height", height);
-    
+
 d3.json("whosampled.json", function(error, graph) {
-	
+
   force
       .nodes(graph.nodes)
       .links(graph.links)
@@ -45,9 +45,5 @@ d3.json("whosampled.json", function(error, graph) {
     node.attr("cx", function(d) { return d.x; })
         .attr("cy", function(d) { return d.y; });
   });
-  
-  window.setTimeout(function () {
-	  force.stop();
-  }, 1000);
-  
+
 });
