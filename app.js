@@ -12,7 +12,7 @@ var svg = d3.select("body").append("svg")
     .attr("width", width)
     .attr("height", height);
 
-d3.json("whosampled.json", function(error, graph) {
+d3.json("data/whosampled.json", function(error, graph) {
 
   force
       .nodes(graph.nodes)
